@@ -5,4 +5,7 @@ version: '3'
 tasks:
   build:
     cmds:
-      - go build -o build/json-log-view
+      - go build -v -o build/json-log-view ./...
+  test:
+    cmds:
+      - go test -v ./...
