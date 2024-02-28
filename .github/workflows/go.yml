@@ -25,6 +25,12 @@ jobs:
     - name: Install Task
       run: go install github.com/go-task/task/v3/cmd/task@v3.30.0
 
+    - name: Install Xvfb
+      run: sudo apt-get install -y xvfb libgl1-mesa-dri
+
+    - name: Start Xvfb
+      run: Xvfb :99 & export DISPLAY=:99
+
     - name: Build
       run: task build
 
